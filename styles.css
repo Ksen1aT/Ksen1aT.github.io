@@ -221,7 +221,7 @@ body {
  
      .publication-text {
          margin-bottom:10px;
-         padding:10px;
+         padding: 10px 10px 0;
      }
  
      .publication-header {
