@@ -216,11 +216,15 @@ footer {
     .publications-cards {
         width: 100%;
         gap: 10px;
+        flex-direction: column;
+    }
+
+    .publication-text {
+        margin-bottom:10px;
     }
 
     .publication-header {
         flex-direction: column;
-        align-items: center;
     }
 
     .publication-text {
@@ -239,5 +243,9 @@ footer {
 
     .project-text {
         width: 80%;
+    }
+
+    footer {
+        justify-content: center;
     }
 }
