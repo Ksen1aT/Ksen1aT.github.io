@@ -231,7 +231,7 @@ footer {
 
     .publication-text {
         flex-direction: column;
-        width: 95%;
+        width: 80%;
     }
 
     .projects-with-info {
