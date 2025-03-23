@@ -215,7 +215,7 @@ footer {
     }
 
     .publications-cards {
-        width: 100%;
+        width: 90%;
         padding: 10px 10px;
         gap: 10px;
         flex-direction: column;
