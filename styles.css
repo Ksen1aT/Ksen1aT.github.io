@@ -1,255 +1,255 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f1f1f1;
-    color: #313131;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-}
-
-header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: #4769ef;
-    color: white;
-    padding: 0 10px 10px;
-}
-
-main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-}
-
-#about-me {
-    display: flex;
-}
-
-.about-me-content {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 700px;
-}
-
-.skills {
-    color: rgb(183, 183, 183);
-}
-
-.profile-pic img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: solid;
-    box-shadow: 0 0 20px #4769ef;
-}
-
-.publicatons {
-    display: flex;
-}
-
-.publications-cards {
-    display:flex;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #729de8;
-    gap: 10%;
-}
-
-.publication-header {
-    display:flex;
-}
-
-.head {
-    font-size: 18px;
-    margin-right: 10px;
-}
-
-.publication-text {
-    width: 45%;
-    background-color: white;
-    padding: 5px;
-    border-radius: 10px;
-    border-right: solid;
-    border-bottom: solid;
-    box-shadow: 0 0 20px #133cde;
-}
-
-.projects-with-info {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-    align-items: start;
-    border-bottom: solid;
-}
-
-.project-container {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px
-}
-
-.descriptions {
-    gap: 20px;
-}
-
-.project-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid #ddd;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.project-pic img {
-    width: 200px;
-    height: 100px;
-}
-
-.project-text {
-    width: 400px;
-    text-align: left;
-}
-
-.teg {
-    display: block;
-    margin-top: 10px;
-    padding: 5px 5px 5px;
-    background-color: #a1bff0;
-    color: #4686ee;
-    width: fit-content;
-    border-radius: 10px;
-}
-
-.button-with-ref {
-    display: block;
-    margin-top: 10px;
-    padding: 10px 10px 15px;
-    background-color: #4769ef;
-    color: white;
-    width: fit-content;
-    border-radius: 10px;
-    box-shadow: 0 0 5px #5b5c5f;
-}
-
-.button-with-ref a {
-    color: white
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-form input,
-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-}
-
-form button {
-    font-size:14px;
-    padding: 10px;
-    background-color: #4769ef;
-    color: white;
-    border:none;
-    border-radius: 10px;
-    width: fit-content;
-    box-shadow: 0 0 5px #5b5c5f;
-}
-
-.social-icons {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    background-color: #4769ef;
-    color: white;
-    padding: 5px 0 5px;
-}
-
-@media (max-width: 480px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    header {
-        padding: 10px;
-    }
-
-    main {
-        padding: 10px;
-    }
-
-    .profile-pic img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .publicatons {
-        flex-direction: column;
-    }
-
-    .publications-cards {
-        width: 90%;
-        padding: 0;
-        gap: 0;
-        flex-direction: column;
-    }
-
-    .publication-text {
-        margin-bottom:10px;
-    }
-
-    .publication-header {
-        flex-direction: column;
-    }
-
-    .publication-text {
-        flex-direction: column;
-        width: 90%;
-        padding: 5px;
-        box-shadow: 0 0 10px #133cde;
-    }
-
-    .projects-with-info {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .project-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .project-text {
-        width: 80%;
-    }
-
-    footer {
-        justify-content: center;
-    }
-}
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f1f1f1;
+     color: #313131;
+ }
+ 
+ nav ul {
+     list-style-type: none;
+     display: flex;
+     gap: 20px;
+ }
+ 
+ nav a {
+     color: white;
+ }
+ 
+ header {
+     display: flex;
+     justify-content: flex-end;
+     background-color: #4769ef;
+     color: white;
+     padding: 0 10px 10px;
+ }
+ 
+ main {
+     max-width: 900px;
+     margin: 40px auto;
+     padding: 20px;
+     background-color: white;
+ }
+ 
+ #about-me {
+     display: flex;
+ }
+ 
+ .about-me-content {
+     flex-direction: column;
+     align-items: flex-start;
+     width: 100%;
+     max-width: 700px;
+ }
+ 
+ .skills {
+     color: rgb(183, 183, 183);
+ }
+ 
+ .profile-pic img {
+     width: 200px;
+     height: 200px;
+     border-radius: 50%;
+     object-fit: cover;
+     border: solid;
+     box-shadow: 0 0 20px #4769ef;
+ }
+ 
+ .publicatons {
+     display: flex;
+ }
+ 
+ .publications-cards {
+     display:flex;
+     border: 1px solid #ddd;
+     padding: 20px;
+     border-radius: 10px;
+     background-color: #729de8;
+     gap: 10%;
+ }
+ 
+ .publication-header {
+     display:flex;
+ }
+ 
+ .head {
+     font-size: 18px;
+     margin-right: 10px;
+ }
+ 
+ .publication-text {
+     width: 45%;
+     background-color: white;
+     padding: 5px;
+     border-radius: 10px;
+     border-right: solid;
+     border-bottom: solid;
+     box-shadow: 0 0 20px #133cde;
+ }
+ 
+ .projects-with-info {
+     display: flex;
+     gap: 20px;
+     margin-bottom: 20px;
+     align-items: start;
+     border-bottom: solid;
+ }
+ 
+ .project-container {
+     display: flex;
+     gap: 20px;
+     margin-bottom: 20px
+ }
+ 
+ .descriptions {
+     gap: 20px;
+ }
+ 
+ .project-card {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     border: 2px solid #ddd;
+     padding: 10px;
+     border-radius: 10px;
+     text-align: center;
+ }
+ 
+ .project-pic img {
+     width: 200px;
+     height: 100px;
+ }
+ 
+ .project-text {
+     width: 400px;
+     text-align: left;
+ }
+ 
+ .teg {
+     display: block;
+     margin-top: 10px;
+     padding: 5px 5px 5px;
+     background-color: #a1bff0;
+     color: #4686ee;
+     width: fit-content;
+     border-radius: 10px;
+ }
+ 
+ .button-with-ref {
+     display: block;
+     margin-top: 10px;
+     padding: 10px 10px 15px;
+     background-color: #4769ef;
+     color: white;
+     width: fit-content;
+     border-radius: 10px;
+     box-shadow: 0 0 5px #5b5c5f;
+ }
+ 
+ .button-with-ref a {
+     color: white
+ }
+ 
+ form {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+ }
+ 
+ form input,
+ form textarea {
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 10px;
+ }
+ 
+ form button {
+     font-size:14px;
+     padding: 10px;
+     background-color: #4769ef;
+     color: white;
+     border:none;
+     border-radius: 10px;
+     width: fit-content;
+     box-shadow: 0 0 5px #5b5c5f;
+ }
+ 
+ .social-icons {
+     list-style-type: none;
+     display: flex;
+     justify-content: center;
+     gap: 20px;
+     margin-top: 20px;
+ }
+ 
+ footer {
+     display: flex;
+     justify-content: center;
+     background-color: #4769ef;
+     color: white;
+     padding: 5px 0 5px;
+ }
+ 
+ @media (max-width: 480px) {
+     nav ul {
+         flex-direction: column;
+         gap: 10px;
+     }
+ 
+     header {
+         padding: 10px;
+     }
+ 
+     main {
+         padding: 10px;
+     }
+ 
+     .profile-pic img {
+         width: 100px;
+         height: 100px;
+     }
+ 
+     .publicatons {
+         flex-direction: column;
+     }
+ 
+     .publications-cards {
+         width: 80%;
+         padding: 10px 10px;
+         gap: 10px;
+         flex-direction: column;
+     }
+ 
+     .publication-text {
+         margin-bottom:10px;
+         padding-right:10px;
+     }
+ 
+     .publication-header {
+         flex-direction: column;
+     }
+ 
+     .publication-text {
+         flex-direction: column;
+         width: 80%;
+         box-shadow: 0 0 10px #133cde;
+     }
+ 
+     .projects-with-info {
+         flex-direction: column;
+         gap: 10px;
+     }
+ 
+     .project-container {
+         flex-direction: column;
+         gap: 10px;
+     }
+ 
+     .project-text {
+         width: 80%;
+     }
+ 
+     footer {
+         justify-content: center;
+     }
+ }
