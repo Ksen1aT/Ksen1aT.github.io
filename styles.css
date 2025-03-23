@@ -205,17 +205,18 @@ footer {
     }
 
     .profile-pic img {
-        margin-top: 10px;
+        padding-top: 10px;
         width: 100px;
         height: 100px;
     }
 
     .publicatons {
         flex-direction: column;
+        width: 80%;
     }
 
     .publications-cards {
-        width: 80%;
+        width: 100%;
         gap: 10px;
         flex-direction: column;
     }
