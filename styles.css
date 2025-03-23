@@ -208,6 +208,8 @@ body {
      .publications-cards {
          flex-direction: column;
          width: 100%;
+         padding: 10px;
+         gap: 0;
      }
  
      .publication-text {
