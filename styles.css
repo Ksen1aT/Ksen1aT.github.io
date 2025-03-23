@@ -215,7 +215,7 @@ body {
  
       .publication-text {
           flex-direction: column;
-          width: 100%;
+          width: 90%;
           box-shadow: none;
           padding: 5px;
           margin: 10px;
