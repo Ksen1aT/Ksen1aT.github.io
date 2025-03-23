@@ -216,7 +216,6 @@ body {
      .publications-cards {
          width: 80%;
          padding: 10px 10px;
-         gap: 10px;
          flex-direction: column;
      }
  
