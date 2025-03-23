@@ -228,7 +228,8 @@ footer {
     }
 
     .publication-text {
-        width: 45%;
+        flex-direction: column;
+        width: 100%;
     }
 
     .projects-with-info {
