@@ -199,6 +199,7 @@ body {
       .profile-pic img {
           width: 100px;
           height: 100px;
+          box-shadow: 0 0 10px #4769ef;
       }
  
       .publicatons {
