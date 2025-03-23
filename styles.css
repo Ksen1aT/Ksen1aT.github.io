@@ -183,7 +183,7 @@ body {
       padding: 5px 0 5px;
   }
  
-  @media (max-width: 393px) {
+  @media (max-width: 480px) {
       nav ul {
           flex-direction: column;
           gap: 10px;
