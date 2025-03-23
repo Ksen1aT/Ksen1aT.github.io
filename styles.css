@@ -211,10 +211,11 @@ footer {
 
     .publicatons {
         flex-direction: column;
+        width: 100%;
     }
 
     .publications-cards {
-        width: 100% !important;
+        width: 100%;
         gap: 10px;
         flex-direction: column;
     }
