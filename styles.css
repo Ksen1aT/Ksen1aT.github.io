@@ -206,9 +206,10 @@ body {
      }
  
      .publications-cards {
+         flex-direction: column;
          width: 90%;
          padding: 10px;
-         flex-direction: column;
+         gap: 0;
      }
  
      .publication-text {
