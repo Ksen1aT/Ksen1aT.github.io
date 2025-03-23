@@ -231,7 +231,6 @@ footer {
     .publication-text {
         flex-direction: column;
         width: 100%;
-        padding: 10px;
         box-shadow: 0 0 10px #133cde;
     }
 
