@@ -33,6 +33,7 @@ body {
  
   #about-me {
       display: flex;
+      align-items: center;
   }
  
   .about-me-content {
