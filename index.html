@@ -121,7 +121,8 @@
       <h1>Свяжитесь со мной</h1>
       <form action="/">
         <label for="input-name">Имя:</label>
-        <input type="text" name="name" id="input-name" required="">
+        <input type="text" name="name" id="input-name" pattern="[a-яА-Я\s\-]*"
+        title="Допускается только кириллица, дефисы и пробелы" required="">
         <label for="input-email">Email:</label>
         <input type="email" name="email" id="input-email" required="">
         <label for="message">Сообщение:</label>
