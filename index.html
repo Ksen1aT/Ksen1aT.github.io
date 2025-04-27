@@ -355,6 +355,12 @@
         }
       </script>
     </section>
+
+    <div id="message-popup" class="message-popup">
+      <span class="close-message" id="close-message">&times;</span>
+      <p>Здравствуйте!</p>
+    </div>
+    
     <script>
       const closeMessage = document.getElementsByClassName('close-message')[0];
       window.onload = function () {
@@ -370,12 +376,6 @@
         localStorage.setItem('popupClosed', 'true');
       }
     </script>
-
-
-    <div id="message-popup" class="message-popup">
-      <span class="close-message" id="close-message">&times;</span>
-      <p>Здравствуйте!</p>
-    </div>
 
   </main>
 
