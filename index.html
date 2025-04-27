@@ -9,17 +9,43 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
+<script>
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const svgElement = document.getElementById('yourSvgElement');
+    svgElement.style.transform = `translateY(${scrollPosition * 0.5}px)`; // Example of moving the SVG
+  });
+</script>
+
 <body>
   <header class="header">
-    <nav>
+    <nav id="navbar">
       <ul>
         <li><a href="#about-me">Обо мне</a></li>
         <li><a href="#publications">Публикации</a></li>
         <li><a href="#projects">Проекты</a></li>
+        <li><a href="#gallery">Галерея</a></li>
         <li><a href="#contact">Сообщение</a></li>
       </ul>
     </nav>
   </header>
+
+  <script>
+    window.onscroll = function () {
+      stickyNavbar();
+    };
+
+    const navbar = document.getElementById("navbar");
+    const sticky = navbar.offsetTop + window.innerHeight;
+
+    function stickyNavbar() {
+      if (window.pageYOffset > sticky) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  </script>
 
   <main>
     <section id="about-me">
@@ -117,20 +143,297 @@
       </div>
     </section>
 
+    <section id="gallery">
+      <h1>Галерея</h1>
+      <div class="gallery-container">
+        <div class="descr">
+          <p class="teg-new">Изображение1</p>
+          <img src="profile.jpg" alt="Проект 1" class="thumbnail" onclick="openPopup(0)">
+        </div>
+        <div class="descr">
+          <p class="teg-new">Изображение2</p>
+          <img src="profile.jpg" alt="Проект 2" class="thumbnail" onclick="openPopup(1)">
+        </div>
+        <div class="descr">
+          <p class="teg-new">Изображение3</p>
+          <img src="profile.jpg" alt="Проект 3" class="thumbnail" onclick="openPopup(2)">
+        </div>
+        <div id="myModal" class="modal">
+          <span class="close" id="close-gallery">&times;</span>
+          <img class="modal-content" id="img1">
+          <div id="caption"></div>
+          <button id="prev" class="nav-button">❮</button>
+          <button id="next" class="nav-button">❯</button>
+        </div>
+        <div id="myModal" class="modal">
+          <span class="close" id="close-gallery">&times;</span>
+          <img class="modal-content" id="img2">
+          <div id="caption"></div>
+          <button id="prev" class="nav-button">❮</button>
+          <button id="next" class="nav-button">❯</button>
+        </div>
+        <div id="myModal" class="modal">
+          <span class="close" id="close-gallery">&times;</span>
+          <img class="modal-content" id="img3">
+          <div id="caption"></div>
+          <button id="prev" class="nav-button">❮</button>
+          <button id="next" class="nav-button">❯</button>
+        </div>
+        <script>
+          const images = ['profile.jpg', 'profile.jpg', 'profile.jpg'];
+          let currentIndex = 0;
+
+          const popup = document.getElementById('myModal');
+          const popupImg = document.getElementById('img1');
+          const captionText = document.getElementById('caption');
+          const closeButton = document.getElementsByClassName('close')[0];
+          const nextButton = document.getElementById('next');
+          const prevButton = document.getElementById('prev');
+
+          function openPopup(index) {
+            currentIndex = index;
+            if (currentIndex === 0) {
+              prevButton.style.display = 'none';
+              nextButton.style.display = 'block';
+            } else if (currentIndex === images.length - 1) {
+              nextButton.style.display = 'none';
+              prevButton.style.display = 'block';
+            } else {
+              prevButton.style.display = 'block';
+              nextButton.style.display = 'block';
+            }
+            popupImg.src = images[currentIndex];
+            captionText.innerHTML = `Изображение ${currentIndex + 1} из ${images.length}`;
+            popup.style.display = 'block';
+          }
+
+          closeButton.onclick = function () {
+            popup.style.display = 'none';
+          }
+
+          nextButton.onclick = function () {
+            currentIndex = (currentIndex + 1) % images.length;
+            if (currentIndex === 0) {
+              prevButton.style.display = 'none';
+              nextButton.style.display = 'block';
+            } else if (currentIndex === images.length - 1) {
+              nextButton.style.display = 'none';
+              prevButton.style.display = 'block';
+            } else {
+              prevButton.style.display = 'block';
+              nextButton.style.display = 'block';
+            }
+            popupImg.src = images[currentIndex];
+            captionText.innerHTML = `Изображение ${currentIndex + 1} из ${images.length}`;
+          }
+
+          prevButton.onclick = function () {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            if (currentIndex === 0) {
+              prevButton.style.display = 'none';
+              nextButton.style.display = 'block';
+            } else if (currentIndex === images.length - 1) {
+              nextButton.style.display = 'none';
+              prevButton.style.display = 'block';
+            } else {
+              prevButton.style.display = 'block';
+              nextButton.style.display = 'block';
+            }
+            popupImg.src = images[currentIndex];
+            captionText.innerHTML = `Изображение ${currentIndex + 1} из ${images.length}`;
+          }
+
+          document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
+            thumbnail.onclick = () => openPopup(index);
+          });
+        </script>
+    </section>
+
     <section id="contact">
       <h1>Свяжитесь со мной</h1>
-      <form action="/">
-        <label for="input-name">Имя:</label>
-        <input type="text" name="name" id="input-name" pattern="[a-яА-Я\s\-]*"
-        title="Допускается только кириллица, дефисы и пробелы" required="">
-        <label for="input-email">Email:</label>
-        <input type="email" name="email" id="input-email" required="">
-        <label for="message">Сообщение:</label>
-        <input id="message" name="message" required="">
-        <button type="submit">Отправить</button>
-      </form>
+      <div class="button-with-ref" id="form-button">
+        <a id="open-form" href="#" target="_blank">Форма обратной связи</a>
+      </div>
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close-form" id="close-form">&times;</span>
+          <form id="contact-form" action="/" method="POST">
+            <label for="input-name">Имя:</label>
+            <input type="text" name="name" id="input-name" pattern="[a-яА-Я\s\-]*"
+              title="Допускается только кириллица, дефисы и пробелы" required="">
+            <label for="input-email">Email:</label>
+            <input type="email" name="email" id="input-email" required="">
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" required=""></textarea>
+            <button type="submit" id="form-submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+      <div class="thanks" id="send-message">
+        <p>Спасибо за обратную связь!</p>
+      </div>
+      <script>
+        const button = document.getElementById('form-button');
+        const openForm = document.getElementById('open-form');
+        const closeForm = document.getElementsByClassName('close-form')[0];
+        const form = document.getElementById('popup');
+        const send = document.getElementById('form-submit');
+        const message = document.getElementById('send-message');
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]/;
+        const namePattern = /^[a-яА-Я.-]/
+
+        openForm.onclick = function (event) {
+          event.preventDefault();
+          form.style.display = 'block';
+          button.style.display = 'none';
+          message.style.display = 'none';
+        }
+
+        closeForm.onclick = function () {
+          form.style.display = 'none';
+          button.style.display = 'block';
+          message.style.display = 'none';
+        }
+
+        send.onclick = function (event) {
+          if (validateForm()) {
+            form.style.display = 'none';
+            button.style.display = 'none';
+            message.style.display = 'block';
+          }
+          event.preventDefault();
+        }
+
+        function validateForm() {
+          let isValid = true;
+          const requiredFields = document.querySelectorAll('input[required], textarea[required]');
+          for (let field of requiredFields) {
+            if (!field.value.trim()) {
+              isValid = false;
+              alert('Заполните все поля.');
+              return isValid;
+            }
+            if (field.type === 'email' && !emailPattern.test(field.value)) {
+              isValid = false;
+              alert('Введите корректный адрес электронной почты.');
+              return isValid;
+            }
+            if (field.type === 'text' && !namePattern.test(field.value)) {
+              isValid = false;
+              alert('В имени допускаются только кириллица, дефисы и пробелы.');
+              return isValid;
+            }
+          }
+          return isValid;
+        }
+
+        document.getElementById('contact-form').onsubmit = function (event) {
+          event.preventDefault();
+          if (validateForm) {
+            const formData = new FormData(this);
+            fetch(this.action, {
+              method: 'POST',
+              body: formData
+            })
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error('Сетевая ошибка');
+                }
+                return response.json();
+              })
+              .then(data => {
+                console.log('Успех:', data);
+                form.style.display = 'none';
+                button.style.display = 'none';
+                message.style.display = 'block';
+              })
+              .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
+              });
+          }
+        }
+      </script>
     </section>
+    <script>
+      const closeMessage = document.getElementsByClassName('close-message')[0];
+      window.onload = function () {
+        if (!localStorage.getItem('popupClosed')) {
+          setTimeout(function () {
+            document.getElementById('message-popup').style.display = 'block';
+          }, 30000);
+        }
+      };
+
+      closeMessage.onclick = function () {
+        document.getElementById('message-popup').style.display = 'none';
+        localStorage.setItem('popupClosed', 'true');
+      }
+    </script>
+
+
+    <div id="message-popup" class="message-popup">
+      <span class="close-message" id="close-message">&times;</span>
+      <p>Здравствуйте!</p>
+    </div>
+
   </main>
+
+  <svg class="social" width="100%" height="110">
+    <g class="icon-container">
+      <circle cx="50" cy="50" r="50" class="circle" />
+      <image href="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" x="0" y="0"
+        width="100" height="100" class="icon" />
+      <text x="50" y="55" class="tooltip">@username1</text>
+    </g>
+
+    <g class="icon-container">
+      <circle cx="170" cy="50" r="50" class="circle" />
+      <image
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Vk-messenger.svg/640px-Vk-messenger.svg.png"
+        x="115" y="-4" width="110" height="109" class="icon" />
+      <text x="170" y="55" class="tooltip">@username2</text>
+    </g>
+
+    <g class="icon-container">
+      <circle cx="290" cy="50" r="50" class="circle" />
+      <image
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Telegram_2019_Logo_%28old_gradient_version%29.svg/640px-Telegram_2019_Logo_%28old_gradient_version%29.svg.png"
+        x="240" y="0" width="100" height="100" class="icon" />
+      <text x="290" y="55" class="tooltip">@username3</text>
+    </g>
+
+    
+  </svg>
+
+  <div class="countdown" id="countdown">
+    <p class="timer-header">Время, оставшееся до получения диплома бакалавра МФТИ:</p>
+    <div class="timer" id="timer">
+      <span id="days"></span> дней;
+      <span id="hours"></span> часов;
+      <span id="minutes"></span> минут;
+      <span id="seconds"></span> секунд
+    </div>
+    <script>
+      let countdownDate = new Date("June 30, 2028 00:00:00").getTime();
+      let x = setInterval(function () {
+        let now = new Date().getTime();
+        let distance = countdownDate - now;
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "Диплом получен!";
+        }
+      }, 1000);
+    </script>
+  </div>
 
   <footer>
     <nav>
