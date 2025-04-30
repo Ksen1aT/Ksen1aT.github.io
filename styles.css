@@ -492,6 +492,10 @@ footer {
         width: 80%;
     }
 
+    .gallery-container {
+        flex-direction: column;
+    }
+
     footer {
         justify-content: center;
     }
