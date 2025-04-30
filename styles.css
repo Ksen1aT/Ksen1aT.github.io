@@ -496,6 +496,10 @@ footer {
         flex-direction: column;
     }
 
+    .message-popup {
+        left: 85%;
+    }
+
     footer {
         justify-content: center;
     }
