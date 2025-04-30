@@ -204,6 +204,7 @@ form button {
 
 .gallery-container {
     display: flex;
+    flex-direction: column;
     background-color: #729de8;
     width: fit-content;
     padding-left: 20px;
