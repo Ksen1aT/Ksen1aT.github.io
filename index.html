@@ -9,14 +9,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<script>
-  window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    const svgElement = document.getElementById('yourSvgElement');
-    svgElement.style.transform = `translateY(${scrollPosition * 0.5}px)`; // Example of moving the SVG
-  });
-</script>
-
 <body>
   <header class="header">
     <nav id="navbar">
@@ -297,9 +289,14 @@
 
         send.onclick = function (event) {
           if (validateForm()) {
-            form.style.display = 'none';
-            button.style.display = 'none';
-            message.style.display = 'block';
+            send.textContent = 'Отправляем...';
+            send.style.backgroundColor =  '#000000';
+            send.disabled = true;
+            setTimeout(() => {
+              form.style.display = 'none';
+              button.style.display = 'none';
+              message.style.display = 'block';
+            }, 3000);
           }
           event.preventDefault();
         }
@@ -326,33 +323,6 @@
           }
           return isValid;
         }
-
-        document.getElementById('contact-form').onsubmit = function (event) {
-          event.preventDefault();
-          if (validateForm) {
-            const formData = new FormData(this);
-            fetch(this.action, {
-              method: 'POST',
-              body: formData
-            })
-              .then(response => {
-                if (!response.ok) {
-                  throw new Error('Сетевая ошибка');
-                }
-                return response.json();
-              })
-              .then(data => {
-                console.log('Успех:', data);
-                form.style.display = 'none';
-                button.style.display = 'none';
-                message.style.display = 'block';
-              })
-              .catch(error => {
-                console.error('Ошибка:', error);
-                alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
-              });
-          }
-        }
       </script>
     </section>
 
@@ -360,7 +330,6 @@
       <span class="close-message" id="close-message">&times;</span>
       <p>Здравствуйте!</p>
     </div>
-    
     <script>
       const closeMessage = document.getElementsByClassName('close-message')[0];
       window.onload = function () {
@@ -379,7 +348,7 @@
 
   </main>
 
-  <svg class="social" width="60%" height="110">
+  <svg class="social" width="65%" height="110">
     <g class="icon-container">
       <circle cx="50" cy="50" r="50" class="circle" />
       <image href="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" x="0" y="0"
@@ -403,7 +372,7 @@
       <text x="290" y="55" class="tooltip">@username3</text>
     </g>
 
-    
+
   </svg>
 
   <div class="countdown" id="countdown">
